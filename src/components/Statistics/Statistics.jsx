@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import css from "./Statistics.module.css";
 
 class Statistics extends Component {
     
@@ -8,28 +9,28 @@ class Statistics extends Component {
     render({good, neutral, bad, positive, total} = this.props) {
         return (
             <div>
-                <h2>Statistics</h2>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>Good: </td>
-                            <td>{good}</td>
+                <h2 className={css.title}>Statistics</h2>
+                <table className={css.table}>
+                    <tbody className={css.tbody}>
+                        <tr className={css.tr}>
+                            <td className={css.td}>Good: </td>
+                            <td className={css.td_text}>{good}</td>
                         </tr>
-                        <tr>
-                            <td>Neutral: </td>
-                            <td>{neutral}</td>
+                        <tr className={css.tr}>
+                            <td className={css.td}>Neutral: </td>
+                            <td className={css.td_text}>{neutral}</td>
                         </tr>
-                        <tr>
-                            <td>Bad: </td>
-                            <td>{bad}</td>
+                        <tr className={css.tr}>
+                            <td className={css.td}>Bad: </td>
+                            <td className={css.td_text}>{bad}</td>
                         </tr>
-                        <tr>
-                            <td>Total: </td>
-                            <td>{total}</td>
+                        <tr className={css.tr}>
+                            <td className={css.td}>Total: </td>
+                            <td className={css.td_text}>{total}</td>
                         </tr>
-                        <tr>
-                            <td>Positive: </td>
-                            <td>{positive} %</td>
+                        <tr className={css.tr}>
+                            <td className={css.td}>Positive feedback: </td>
+                            <td className={css.td_text}>{positive}%</td>
                         </tr>
                     </tbody>
                 </table>

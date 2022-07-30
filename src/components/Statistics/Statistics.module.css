@@ -1,0 +1,48 @@
+.title{
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: brown;
+    text-align: center;
+}
+.table{
+    width: 450px;
+    border-collapse: collapse;
+    border-spacing: 0;
+ 
+    
+    
+}
+
+.tbody{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid rgb(12, 12, 12);
+   
+}
+.tr{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: rgb(145, 145, 145);
+    border: 1px solid rgb(12, 12, 12);
+        
+   
+   
+}
+.td{
+    padding-left: 10px;
+    color: brown;
+    font-weight: bold;
+    font-size: 24px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid rgb(12, 12, 12);
+    
+}
+.td_text{
+    text-align: center;
+    font-size: 18px;
+    color: brown;
+}
