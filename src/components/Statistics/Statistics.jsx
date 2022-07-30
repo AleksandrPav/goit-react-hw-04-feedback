@@ -1,46 +1,40 @@
 import React, { Component } from "react";
 
 class Statistics extends Component {
-    state = {
-        good: 0,
-        neutral: 0,
-        bad: 0
-    }
-    countTotalFeedback() {
-        return this.state.good + this.state.neutral + this.state.bad;
-    }
-    countPositiveFeedbackPercentage() {
-        return  this.countTotalFeedback() > 0 ? (this.state.good / (this.countTotalFeedback()) * 100).toFixed(0) : 0;
-    }
-    render() {
+    
+   
+    
+
+    render({good, neutral, bad, positive, total} = this.props) {
         return (
             <div>
                 <h2>Statistics</h2>
                 <table>
                     <tbody>
                         <tr>
-                            <td>Good:</td>
-                            <td>{this.state.good}</td>
+                            <td>Good: </td>
+                            <td>{good}</td>
                         </tr>
                         <tr>
-                            <td>Neutral:</td>
-                            <td>{this.state.neutral}</td>
+                            <td>Neutral: </td>
+                            <td>{neutral}</td>
                         </tr>
                         <tr>
-                            <td>Bad:</td>
-                            <td>{this.state.bad}</td>
+                            <td>Bad: </td>
+                            <td>{bad}</td>
                         </tr>
                         <tr>
-                            <td>Total:</td>
-                            <td>{this.countTotalFeedback()}</td>
+                            <td>Total: </td>
+                            <td>{total}</td>
                         </tr>
                         <tr>
-                            <td>Positive feedback:</td>
-                            <td>{this.countPositiveFeedbackPercentage()} %</td>
+                            <td>Positive: </td>
+                            <td>{positive} %</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+        
         );
     }
 }
