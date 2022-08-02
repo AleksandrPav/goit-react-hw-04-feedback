@@ -46,7 +46,15 @@ class App extends Component {
     
     if (this.countTotalFeedback() > 0) {
       return (
-   
+        <div
+        style={{
+        height: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontSize: 40,
+        color: '#010101'
+      }}>
           
         
         <StatisticsSection title="Give feedback">
@@ -62,11 +70,19 @@ class App extends Component {
             total={this.countTotalFeedback(this.state)}
           />
           </StatisticsSection>
+          </div>
     
       );
     } else {
       return (
-      
+      <div style={{
+        height: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontSize: 40,
+        color: '#010101'
+      }}>
       
           <StatisticsSection title="Give feedback">
           <FeedbackOptions
@@ -76,7 +92,7 @@ class App extends Component {
            <Notification message="There is no feedback" />
           </StatisticsSection>
      
-        
+        </div>
         );
     }
 
