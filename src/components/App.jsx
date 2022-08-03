@@ -30,18 +30,13 @@ class App extends Component {
         
         return this.state.good + this.state.neutral + this.state.bad;
     }
-  handleClick = (event) => {
-      event.preventDefault();
-        for (let i = 0; i < 3; i += 1) {
-            if (event.target.name === "good") {
-                this.setState({ good: this.state.good + 1 });
-            } else if (event.target.name === "neutral") {
-                this.setState({ neutral: this.state.neutral + 1 });
-            } else if (event.target.name === "bad") {
-                this.setState({ bad: this.state.bad + 1 });
-            }
-        }
-    }
+  handleClick = () => {
+
+  }
+    
+  
+  
+
   render() {
     
     if (this.countTotalFeedback() > 0) {
