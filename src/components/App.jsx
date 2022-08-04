@@ -4,6 +4,7 @@ import FeedbackOptions from "components/FeedbackOptions/FeedbackOptions";
 import Statistics from "components/Statistics/Statistics";
 import StatisticsSection from "components/StatisticsSection/StatisticsSection";
 import Notification from "components/Notification/Notification";
+import css from "./App.module.css";
 
 class App extends Component {
   static defaultProps = {
@@ -30,8 +31,9 @@ class App extends Component {
         
         return this.state.good + this.state.neutral + this.state.bad;
     }
-  handleClick = () => {
-
+  handleClick = (e) => {
+    const name = e.target.name;
+		this.setState((prevState) => ({[name]: prevState[name] + 1}));
   }
     
   
@@ -41,15 +43,7 @@ class App extends Component {
     
     if (this.countTotalFeedback() > 0) {
       return (
-        <div
-        style={{
-        height: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}>
+        <div className={css.container}>
           
         
         <StatisticsSection title="Give feedback">
@@ -70,14 +64,7 @@ class App extends Component {
       );
     } else {
       return (
-      <div style={{
-        height: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}>
+      <div className={css.container}>
       
           <StatisticsSection title="Give feedback">
           <FeedbackOptions
