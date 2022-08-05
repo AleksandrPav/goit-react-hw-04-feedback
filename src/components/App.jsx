@@ -27,12 +27,11 @@ class App extends Component {
         return  this.countTotalFeedback() > 0 ? (this.state.good / (this.countTotalFeedback()) * 100).toFixed(0) : 0;
   }
   countTotalFeedback() {
-    
-        
         return this.state.good + this.state.neutral + this.state.bad;
-    }
-  handleClick = (e) => {
-    const name = e.target.name;
+  }
+  
+
+  handleClick = (name) => {
 		this.setState((prevState) => ({[name]: prevState[name] + 1}));
   }
     
@@ -40,48 +39,27 @@ class App extends Component {
   
 
   render() {
-    
-    if (this.countTotalFeedback() > 0) {
       return (
         <div className={css.container}>
-          
-        
-        <StatisticsSection title="Give feedback">
+          <StatisticsSection title="Give feedback">        
           <FeedbackOptions
             options={this.props.options}
             onLeaveFeedback={this.handleClick}
-          />
-          <Statistics
+            />
+            {this.countTotalFeedback() > 0 ? (
+            <Statistics
             good={this.state.good}
             neutral={this.state.neutral}
             bad={this.state.bad}
             positive={this.countPositiveFeedbackPercentage()}
             total={this.countTotalFeedback(this.state)}
-          />
+          />) : <Notification message="There is no feedback" />}
           </StatisticsSection>
           </div>
     
       );
-    } else {
-      return (
-      <div className={css.container}>
-      
-          <StatisticsSection title="Give feedback">
-          <FeedbackOptions
-              options={this.props.options}
-              onLeaveFeedback={this.handleClick}
-                />
-           <Notification message="There is no feedback" />
-          </StatisticsSection>
-     
-        </div>
-        );
-    }
 
-
-
-      
-    }
-};
+  }
+}
 
 export default App;
