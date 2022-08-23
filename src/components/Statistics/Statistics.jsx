@@ -1,12 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import css from "./Statistics.module.css";
 
-class Statistics extends Component {
-    
-   
-    
-
-    render({good, neutral, bad, positive, total} = this.props) {
+const Statistics = ({ good, neutral, bad, positive, total }) => {
         return (
             <div>
                 <h2 className={css.title}>Statistics</h2>
@@ -35,9 +30,6 @@ class Statistics extends Component {
                     </tbody>
                 </table>
             </div>
-        
         );
-    }
 }
-
 export default Statistics;
