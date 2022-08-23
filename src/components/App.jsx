@@ -27,13 +27,9 @@ const App = () => {
   }
 
   const handleClick = (name) => {
-    if (name === "good") {
-      setGood(good + 1);
-    } else if (name === "neutral") {
-      setNeutral(neutral + 1);
-    } else if (name === "bad") {
-      setBad(bad + 1);
-    }
+    setGood(name === "good" ? good + 1 : good);
+    setNeutral(name === "neutral" ? neutral + 1 : neutral);
+    setBad(name === "bad" ? bad + 1 : bad);
   }
 
       return (
