@@ -14,7 +14,8 @@ const App = () => {
     { name: "bad", text: "Bad", value: 0 },
       
   ],
-}
+  }
+  
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
@@ -27,9 +28,7 @@ const App = () => {
   }
 
   const handleClick = (name) => {
-    setGood(name === "good" ? good + 1 : good);
-    setNeutral(name === "neutral" ? neutral + 1 : neutral);
-    setBad(name === "bad" ? bad + 1 : bad);
+     return name === "good" ? setGood(good + 1) : name === "neutral" ? setNeutral(neutral + 1) : setBad(bad + 1);
   }
 
       return (
